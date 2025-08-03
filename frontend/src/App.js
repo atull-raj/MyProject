@@ -1,8 +1,8 @@
-// frontend/src/App.js
+
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css"; // Optional: for basic styling
+import "./App.css";
 
 function App() {
   const [dashboardData, setDashboardData] = useState([]);
@@ -19,7 +19,7 @@ function App() {
     totalAmount: "",
   });
 
-  // Backend URL (make sure this matches your backend's port)
+
   const API_URL = "http://localhost:5000/api";
 
   // --- Data Fetching ---
@@ -43,7 +43,7 @@ function App() {
       }
     };
     fetchData();
-  }, []); // Empty dependency array means this runs once on component mount
+  }, []);
 
   // --- Form Handlers ---
   const handleInputChange = (e) => {
@@ -52,17 +52,17 @@ function App() {
   };
 
   const handleAddTransaction = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
     try {
       const response = await axios.post(
         `${API_URL}/transactions`,
         newTransaction
       );
       console.log("New transaction added:", response.data);
-      // Refresh data after adding
+     
       const updatedDashboardData = await axios.get(`${API_URL}/dashboard-data`);
       setDashboardData(updatedDashboardData.data);
-      // Clear form
+      
       setNewTransaction({
         userId: "",
         productId: "",
@@ -80,7 +80,7 @@ function App() {
       try {
         await axios.delete(`${API_URL}/transactions/${transactionId}`);
         console.log(`Transaction ${transactionId} deleted.`);
-        // Remove from UI directly or refetch
+        
         setDashboardData((prevData) =>
           prevData.filter((item) => item.transaction_id !== transactionId)
         );
@@ -98,7 +98,7 @@ function App() {
     <div className="App">
       <h1>User Dashboard</h1>
 
-      {/* Add New Transaction Form */}
+      
       <div className="add-transaction-section">
         <h2>Add New Transaction</h2>
         <form onSubmit={handleAddTransaction}>
@@ -161,7 +161,7 @@ function App() {
 
       <hr />
 
-      {/* Combined Data Table */}
+     
       <div className="dashboard-table-section">
         <h2>All Transactions</h2>
         <table>
