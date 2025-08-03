@@ -1,4 +1,4 @@
--- db.sql
+
 
 CREATE TABLE user_information (
     user_id SERIAL PRIMARY KEY,
@@ -19,7 +19,7 @@ CREATE TABLE user_transaction (
     total_amount DECIMAL(10, 2) NOT NULL
 );
 
--- Optional: Sample Data (testing ke liye)
+
 INSERT INTO user_information (user_name, user_phone_number) VALUES
 ('Rohan Sharma', '9876543210'),
 ('Priya Singh', '9988776655');
