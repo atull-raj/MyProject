@@ -1,4 +1,4 @@
-/* frontend/src/App.css */
+
 
 body {
   font-family: Arial, sans-serif;
@@ -55,15 +55,15 @@ form label {
 form input[type="date"],
 form input[type="number"],
 form select {
-  width: calc(100% - 20px); /* Adjust for padding */
+  width: calc(100% - 20px); 
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; /* Include padding in width */
+  box-sizing: border-box; 
 }
 
 form button[type="submit"] {
-  grid-column: span 2; /* Button spans both columns */
+  grid-column: span 2;
   background-color: #28a745;
   color: white;
   padding: 12px 20px;
@@ -78,9 +78,9 @@ form button[type="submit"]:hover {
   background-color: #218838;
 }
 
-/* Table Styling */
+
 .dashboard-table-section {
-  overflow-x: auto; /* For responsiveness on smaller screens */
+  overflow-x: auto; 
 }
 
 table {
